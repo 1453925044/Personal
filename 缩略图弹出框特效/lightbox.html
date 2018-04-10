@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+    <!-- <center><h3>缩略图样式</h3></center><br> -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 fancybox img-responsive">
+            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/banner1.jpg">
+                <img src="images/banner1.jpg" alt="" />
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 fancybox img-responsive">
+            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/banner2.jpg">
+                <img src="images/banner2.jpg" alt="" />
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 fancybox img-responsive">
+            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/banner1.jpg">
+                <img src="images/banner1.jpg" alt="" />
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 fancybox img-responsive">
+            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/banner2.jpg">
+                <img src="images/banner2.jpg" alt="" />
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="js/bootstrap/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js "></script>
+<script type="text/javascript" src="js/jquery.fancybox-thumbs.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancy').fancybox();
+		$('.fancybox-thumbs').fancybox({
+			prevEffect : 'none',
+			nextEffect : 'none',
+
+			closeBtn  : false,
+			arrows    : false,
+			nextClick : true,
+
+			helpers : {
+				thumbs : {
+					width  : 50,
+					height : 50
+				}
+			}
+		});
+	});
+</script>

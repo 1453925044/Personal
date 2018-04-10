@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html" />
+<title>jQuery图片弹出层切换代码</title>
+<!-- 更换第三方图标库,Font Awesome <i class="icon-magic">-->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+</head>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 fancybox img-responsive">
+            <a class="fancy" href="images/banner1.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet">
+                <img src="images/banner1.jpg"/>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3  fancybox img-responsive">
+            <a class="fancy" href="images/banner2.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp">
+                 <img src="images/banner2.jpg"/>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3  fancybox img-responsive">
+            <a class="fancy" href="images/banner1.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon">
+                 <img src="images/banner1.jpg"/>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3  fancybox img-responsive">
+            <a class="fancy" href="images/banner2.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno">
+                 <img src="images/banner2.jpg"/>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="js/bootstrap/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js "></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fancy').fancybox();
+		$('.fancybox-thumbs').fancybox({
+			prevEffect : 'none',
+			nextEffect : 'none',
+
+			closeBtn  : true,
+			arrows    : true,
+			nextClick : true,
+
+			helpers : {
+				thumbs : {
+					width  : 50,
+					height : 50
+				}
+			}
+		});
+	});
+</script>
+</body>
+</html>
