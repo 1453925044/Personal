@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幼儿园</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link href="../css/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/csshake.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <script src="../js/echarts.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- 头部导航 -->
+        <nav class="navbar navbar-default top-navbar">
+            <div class="navbar-header">
+                <!-- 网站logo -->
+                <a class="navbar-brand" href="main.html">
+
+                </a>
+                <!-- 隐藏菜单 -->
+                <div id="sideNav">
+                    <i class="material-icons">toc</i>
+                </div>
+            </div>
+            <!-- 退出 -->
+            <div class="login navbar-right">
+                <div class='clock'>
+                    <div class='h shake shake-slow'></div>
+                    <div class='m shake shake-slow'></div>
+                    <div class='s shake shake-slow'></div>
+                </div>
+                <div class="head-portrait">
+                    <img class="img img-circle" src="../images/grzx/tx.jpg" alt="">
+                    <strong>管理员</strong>
+                </div>
+                <a class="exit" href="javascript:void(0);">
+                    <i class="fa fa-power-off"></i> 退出</a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="active">
+                        <a class="active-menu menu-control" href="main.html">
+                            <i class="fa fa-home"></i> 首页
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="partment.html">
+                            <i class="fa fa-sitemap"></i> 基础管理
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>部门管理</li>
+                            <li>职工管理</li>
+                            <li>班级管理</li>
+                            <li>学生管理</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="power.html">
+                            <i class="fa fa-key"></i> 权限管理
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="picture.html">
+                            <i class="fa fa-picture-o"></i> 照片墙
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="check.html">
+                            <i class="fa fa-calendar-check-o"></i> 出勤考核
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="notice.html">
+                            <i class="fa fa-bullhorn"></i>公告通知
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>发布公告</li>
+                            <li>查看公告</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="person.html">
+                            <i class="fa fa-user-circle"></i> 个人中心
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>我的档案</li>
+                            <li>我的消息</li>
+                            <li>请假申请</li>
+                            <li>离职申请</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- 功能区 -->
+    <section id="func">
+        <div class="container-fluid mn">
+            <div class="row mn-banner">
+                <div class="mn-announcement">
+                    <strong>最新公告
+						<i id="mn-icon" class="glyphicon glyphicon-volume-down"> </i>
+					</strong>
+                    <ul id="mn-news">
+                        <li>一碗清粥一份情，这城市因爱而温暖
+                            <span>2018-01-15 11:20</span>
+                        </li>
+                        <li>在审美之外，有生活的刚需和工作的必需。我们总<span>2018-01-17 11:20</span></li>
+                        <li>新征程 暖新闻
+                            <span>2018-01-15 4:20</span>
+                        </li>
+                        <li>为什么要关心熊猫住几平米房间的问题
+                            <span>2018-01-25 14:54</span>
+                        </li>
+                        <li>父母卖亲生孩子被公诉：判刑不如破除收养垄断
+                            <span>2018-01-23 10:04</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row mn-info">
+                <div class="col-xs-12 col-md-6">
+                    <h3 class="chart-title">
+                        <i class="fa fa-line-chart"></i> 园内班级学生出勤情况</h3>
+                    <div id="myChart-stu"></div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h3 class="chart-title">
+                        <i class="fa fa-bar-chart"></i> 园内教师职称分布</h3>
+                    <div id="myChart-tea"></div>
+                </div>
+            </div>
+            <div class="row  mn-info mn-tasks">
+                <div class="col-xs-12 col-md-6 mn-waiting">
+                    <h3 class="chart-title">
+                        <i class="fa fa-tasks"></i> 待办事项
+                        <a class="pull-right btn btn-success mn-add" data-toggle="modal" href="#mn-editor"><i class="fa fa-plus-circle"></i> 添加</a>
+                    </h3>
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr class="tasks_tit_color">
+                                <th>事项</th>
+                                <th>时间</th>
+                                <th>备注</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="info">
+                                <td>吃饭</td>
+                                <td>2017-10-12</td>
+                                <td>...</td>
+                                <td>待完成</td>
+                                <td>
+                                    <a class="btn btn-success btn-xs" data-toggle="modal" href="#mn-editor">
+                                        <i class="fa fa-pencil"></i> 编辑</a>
+                                </td>
+                            </tr>
+                            <tr class="info">
+                                <td>吃饭</td>
+                                <td>2017-10-12</td>
+                                <td>...</td>
+                                <td>待完成</td>
+                                <td>
+                                    <a class="btn btn-success btn-xs" data-toggle="modal" href="#mn-editor">
+                                        <i class="fa fa-pencil"></i> 编辑</a>
+                                </td>
+                            </tr>
+                            <tr class="info">
+                                <td>吃饭</td>
+                                <td>2017-10-12</td>
+                                <td>...</td>
+                                <td>待完成</td>
+                                <td>
+                                    <a class="btn btn-success btn-xs" data-toggle="modal" href="#mn-editor">
+                                        <i class="fa fa-pencil"></i> 编辑</a>
+                                </td>
+                            </tr>
+                            <tr class="info">
+                                <td>吃饭</td>
+                                <td>2017-10-12</td>
+                                <td>...</td>
+                                <td>待完成</td>
+                                <td>
+                                    <a class="btn btn-success btn-xs" data-toggle="modal" href="#mn-editor">
+                                        <i class="fa fa-pencil"></i> 编辑</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-md-6 mn-timeout">
+                    <h3 class="chart-title">
+                        <i class="fa fa-file-text-o"></i> 已过期事项
+                        <small class="pull-right">查看更多</small>
+                    </h3>
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr class="tasks_tit_color">
+                                <th>事项</th>
+                                <th>完成时间</th>
+                                <th>备注</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="danger">
+                                <td>开会</td>
+                                <td>2017-10-12</td>
+                                <td>...</td>
+                                <td>未完成</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="btn  btn-danger btn-xs">
+                                        <i class="fa fa-remove"></i> 删除</a>
+                                </td>
+                            </tr>
+
+                            <tr class="success">
+                                <td>宣讲会</td>
+                                <td>2017-10-12</td>
+                                <td>...</td>
+                                <td>已完成</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="btn  btn-danger btn-xs">
+                                        <i class="fa fa-remove"></i> 删除</a>
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td>义务劳动</td>
+                                <td>2017-10-12</td>
+                                <td>...</td>
+                                <td>全班学生,已完成</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs">
+                                        <i class="fa fa-remove"></i> 删除</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <!-- <div class="weather">
+        <a href="javascript:void(0)">
+            <i class="fa fa-close"></i>
+        </a>
+        <iframe allowtransparency="true" frameborder="0" width="140" height="428" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=3&t=0&v=1&d=5&bd=0&k=&f=&ltf=009944&htf=cc0000&q=1&e=1&a=1&c=56294&w=140&h=428&align=center"></iframe>
+    </div> -->
+    <!-- 添加 -->
+    <div class="modal-wrap">
+        <div class="modal fade" id="mn-editor">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header modal_header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h5 class="modal-title">编辑事项</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">事项</label>
+                                <div class="col-sm-10">
+                                    <span class="glyphicon form-control-feedback"></span>
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="任务">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">时间</label>
+                                <div class="col-sm-10">
+                                    <span class="glyphicon form-control-feedback"></span>
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="xxxx-xx-xx">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">备注</label>
+                                <div class="col-sm-10">
+                                    <span class="glyphicon form-control-feedback"></span>
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="--">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary save-task ">保存</button>
+                        <button type="button" class="btn btn-default cancel-editor" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

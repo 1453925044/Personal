@@ -1,0 +1,217 @@
+/*我的档案style.......................*/
+
+#myPerson_DA {
+    padding-top: 15px;
+    height: 500px;
+    width: 100%;
+    background-color: white;
+}
+
+.myPerson_DAbox1 {
+    background-color: #34AE99;
+    height: 85px;
+    position: relative;
+}
+
+.myPerson_DAbox1 span {
+    position: absolute;
+    color: white;
+    left: 540px;
+    top: 35px;
+    font-size: 15px;
+}
+
+#myTX {
+    position: absolute;
+    left: 300px;
+    top: 25px;
+    border: 3px white solid;
+    width: 100px;
+}
+
+#myPerson_DAbox2 .col-lg-4 {
+    line-height: 35px;
+    font-size: 15px;
+}
+
+#myPerson_DAbox2 .col-lg-12 {
+    height: 60px;
+}
+
+#myPerson_DAbox3 {
+    color: white;
+    background-color: #34af99;
+    border: none;
+    margin-top: 10px;
+    margin-left: 990px;
+}
+
+#myModalLabel {
+    color: white;
+}
+
+#myPerson_DAbox2 .modal-header {
+    background-color: #34af99;
+}
+
+/*弹出框设置*/
+
+#myPerson_DAbox2 button>span {
+    color: white;
+}
+
+#myPerson_DAbox2 .btn-default {
+    background-color: #FD6C64;
+    color: white;
+    border: none;
+}
+
+#myPerson_DAbox2 .btn-primary {
+    background-color: #34af99;
+    color: white;
+    border: none;
+}
+
+.form-group>img {
+    width: 80px;
+}
+
+.form-group {
+    line-height: 50px;
+}
+
+.form-inline {
+    margin-top: 20px;
+}
+
+#exampleInputFile {
+    border: none;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+button,
+input,
+select,
+textarea {
+    line-height: 26px;
+}
+
+.form-group>p {
+    margin-left: 80px;
+}
+
+#messages .form-control {
+    display: inline;
+}
+
+#messages label {
+    line-height: 50px;
+}
+
+.form-inline {
+    margin-top: 20px;
+}
+
+#messages>.form-group {
+    line-height: 30px;
+}
+
+#messages {
+    margin-top: 15px;
+}
+
+/*我的消息style.......................*/
+
+/*#myPerson_XX{*/
+
+/*height: 500px;*/
+
+/*width: 100%;*/
+
+/*background-color: #00ae00;*/
+
+/*}*/
+
+/*请假申请style........................*/
+
+#myPerson_QJ {
+    padding-top: 15px;
+    height: 500px;
+    width: 100%;
+    background-color: white;
+}
+
+#myPerson_QJ>span {
+    font-size: 12px;
+    line-height: 30px;
+    margin-left: 25px;
+}
+
+#myPerson_QJ td {
+    text-align: center;
+    line-height: 30px;
+}
+
+#myPerson_QJ th {
+    text-align: center;
+    line-height: 30px;
+}
+
+#myPerson_QJ select {
+    border: none;
+}
+
+#myPerson_QJ td input {
+    border: none;
+}
+
+.modal-content .glyphicon {
+    color: green;
+    font-size: 35px;
+    padding: 20px 20px;
+}
+
+#profile>.form-group {
+    margin-top: 20px;
+}
+
+#myPerson_QJ_TD .modal-header {
+    background-color: #34af99;
+    color: white;
+}
+
+#myPerson_QJ_TD .modal-body {
+    font-size: 22px;
+}
+
+#myPerson_QJ_TD .modal-content {
+    width: 50%;
+    margin-left: 230px;
+}
+
+#myPerson_QJ_TDtext1 {
+    text-align: left;
+    height: 50px;
+}
+
+#myPerson_QJ_TDtext1 span {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+#myPerson_QJ .btn-primary {
+    background-color: #34af99;
+    color: white;
+    border: none;
+}
+
+.tasks_tit_color {
+    background: #e3e3e3;
+}
+.modal-dialog{
+    width: 500px;
+}
+.form-control{
+    width: 50%;
+}

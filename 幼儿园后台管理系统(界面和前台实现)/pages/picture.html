@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幼儿园</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/csshake.min.css">
+    <link href="../css/common.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <!-- ````````````````````````````````````````` -->
+    <!-- Google Webfonts
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../css/picture/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../css/picture/icomoon.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../css/picture/magnific-popup.css">
+    <!-- Salvattore -->
+    <link rel="stylesheet" href="../css/picture/salvattore.css">
+    <link rel="stylesheet" href="../css/picture/style.css">
+    <!-- Theme Style -->
+
+</head>
+
+<body>
+    <header>
+        <!-- 头部导航 -->
+        <nav class="navbar navbar-default top-navbar">
+            <div class="navbar-header">
+                <!-- 网站logo -->
+                <a class="navbar-brand" href="main.html">
+
+                </a>
+                <!-- 隐藏菜单 -->
+                <div id="sideNav">
+                    <i class="material-icons">toc</i>
+                </div>
+            </div>
+            <!-- 退出 -->
+            <div class="login navbar-right">
+                <div class='clock'>
+                    <div class='h shake shake-slow'></div>
+                    <div class='m shake shake-slow'></div>
+                    <div class='s shake shake-slow'></div>
+                </div>
+                <div class="head-portrait">
+                    <img class="img img-circle" src="../images/grzx/tx.jpg" alt="">
+                    <strong>管理员</strong>
+                </div>
+                <a class="exit" href="javascript:void(0);">
+                    <i class="fa fa-power-off"></i> 退出</a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a class="menu-control" href="main.html">
+                            <i class="fa fa-home"></i> 首页
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="partment.html">
+                            <i class="fa fa-sitemap"></i> 基础管理
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>部门管理</li>
+                            <li>职工管理</li>
+                            <li>班级管理</li>
+                            <li>学生管理</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="power.html">
+                            <i class="fa fa-key"></i> 权限管理
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a class="active-menu menu-control" href="javascript:void(0);">
+                            <i class="fa fa-picture-o"></i> 照片墙
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-control" href="check.html">
+                            <i class="fa fa-calendar-check-o"></i> 出勤考核
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="notice.html">
+                            <i class="fa fa-bullhorn"></i>公告通知
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>发布公告</li>
+                            <li>查看公告</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="person.html">
+                            <i class="fa fa-user-circle"></i> 个人中心
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>我的档案</li>
+                            <li>请假申请</li>
+                            <li>离职申请</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- 功能区 -->
+    <section id="func">
+        <div id="fh5co-main">
+            <!--<div class="container-fluid" id="picture-text">-->
+            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+            <!--<span>照片墙<div></div></span>-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+            <div class="container-fluid">
+                <div class="row">
+                    <!--<span id="picture-text">照片墙</span>-->
+                    <a class="btn btn-default pull-right btn-query" id="a" href="javascript:void(0);">
+                        <i class="fa fa-plus-square" style="color:white"></i> 添加图片
+                    </a>
+                    <input id="upload" name="file" accept="image/*" type="file" style="display: none" />
+                    <div class="clearBoth"></div>
+                    <div id="fh5co-board" data-columns>
+                        <div class="item">
+
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                        </button>
+                                <a href="../images/picture/img_1.jpg" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?">
+                                    <img src='../images/picture/img_1.jpg' alt="Free HTML5 Bootstrap template"></a>
+                            </div>
+                            <div class="fh5co-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?</div>
+                        </div>
+                        <div class="item">
+
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                        </button>
+                                <a href="../images/picture/img_2.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_2.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Veniam voluptatum voluptas tempora debitis harum totam vitae hic quos.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_3.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_3.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_4.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_4.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Dolore itaque deserunt sit, at exercitationem delectus, consequuntur quaerat sapiente.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_5.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_5.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_6.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_6.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Sequi, eaque suscipit accusamus. Necessitatibus libero, unde a nesciunt repellendus!</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_7.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_7.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Necessitatibus distinctio eos ipsam cum hic temporibus assumenda deleniti, soluta.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_8.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_8.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Debitis voluptatum est error nulla voluptate eum maiores animi quasi?</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_9.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_9.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Maxime qui eius quisquam quidem quos unde consectetur accusamus adipisci!</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_21.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_21.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Deleniti aliquid, accusantium, consectetur harum eligendi vitae quaerat reiciendis sit?</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_10.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_10.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Incidunt, eaque et. Et odio excepturi, eveniet facilis explicabo assumenda.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_11.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_11.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Laborum dolores nihil voluptates quas alias distinctio fugiat tempora sit.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_12.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_12.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Sit, quis nulla amet numquam fugit, in reiciendis laboriosam dolor.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_13.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_13.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Possimus explicabo voluptatem natus nisi similique ipsa repudiandae? Quibusdam, fuga.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_14.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_14.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Magni repellendus iusto mollitia, quibusdam facilis incidunt. Sunt, repellat, voluptatem.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_15.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_15.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Unde iure rerum cupiditate explicabo quam aut vel earum numquam.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_16.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_16.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Qui nisi error dolorum dolor delectus, alias doloremque perspiciatis nemo.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_18.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_18.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Neque porro vero cumque natus nam voluptatibus, ratione, commodi labore.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_17.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_17.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Quisquam quia totam, sit ea maxime sint sed excepturi quod.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_19.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_19.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Nesciunt non iste ex nemo sapiente eum, provident nam corporis.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_20.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_20.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Harum repellat labore est cum ipsa, nesciunt neque mollitia adipisci?</div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_22.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_22.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Quos repellendus repudiandae debitis reprehenderit cupiditate cumque accusamus exercitationem, harum.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_23.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_23.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Sunt numquam itaque delectus, dignissimos dolorem obcaecati vel, atque eos.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_24.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_24.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_25.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_25.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Quos repellendus repudiandae debitis reprehenderit cupiditate cumque accusamus exercitationem, harum.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_26.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_26.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Sunt numquam itaque delectus, dignissimos dolorem obcaecati vel, atque eos.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_27.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_27.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_28.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_28.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_29.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_29.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_30.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_30.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+                            </div>
+                        </div>
+                        <!--////////////////////////////////////////////-->
+                        <div class="item last">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="../images/picture/img_30.jpg" class="image-popup fh5co-board-img"><img src="../images/picture/img_30.jpg" alt="Free HTML5 Bootstrap template"></a>
+                                <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+                            </div>
+                        </div>
+                        <!--/////////////////////////////////////////////////增加的图片-->
+                        <div class="item last" style="display: none">
+                            <div class="animate-box">
+                                <button href="javascript:void(0)" class="btn btn-default">                                 <i class="glyphicon glyphicon-trash"></i>                             </button>
+
+                                <a href="" class="image-popup fh5co-board-img" id="a1"><img src="" alt="Free HTML5 Bootstrap template" id="img1"></a>
+                                <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam placeat.</div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer></footer>
+    <script src="../js/picture/jquery-1.11.3.js"></script>
+    <script src="../js/picture/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/picture/main.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <!-- `````````````````````````````````````````````````````` -->
+    <script src="../js/picture/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="../js/picture/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="../js/picture/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../js/picture/jquery.waypoints.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="../js/picture/jquery.magnific-popup.min.js"></script>
+    <!-- Salvattore -->
+    <script src="../js/picture/salvattore.min.js"></script>
+    <!-- Main JS -->
+    <script src="../js/picture/main1.js"></script>
+
+</body>
+
+</html>

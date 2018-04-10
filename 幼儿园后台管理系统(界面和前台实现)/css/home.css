@@ -1,0 +1,136 @@
+@charset "UFT-8";
+   body {
+       background-color: #02c492;
+   }
+
+   #logo {
+       width: 400px;
+       height: 200px;
+       position: absolute;
+       margin: 0px auto;
+       left: 20%;
+       top: 20%;
+   }
+
+   #user {
+       position: absolute;
+       right: 10%;
+       top: 5%;
+   }
+
+   #user>lable {
+       font-size: 26px;
+       color: #02c492;
+       position: absolute;
+       top: 23%;
+       left: 8%;
+       padding: 0px 5px;
+       font-weight: bold;
+   }
+
+   #input {
+       width: 250px;
+       height: 300px;
+       position: absolute;
+       top: 35%;
+       left: 9%;
+   }
+
+   .form-control {
+       height: 40px;
+       margin-top: 15px;
+   }
+
+   .yz {
+       width: 150px;
+       text-align: center;
+   }
+
+   .nogray {
+       width: 80px;
+       height: 40px;
+   }
+
+   .gray {
+       background-image: url("../images/login/bg2-yz.jpg");
+       background-size: 100% 100%;
+       width: 80px;
+       height: 40px;
+       position: absolute;
+       top: 42%;
+       right: 0;
+       text-align: center;
+       line-height: 40px;
+       font-size: 16px;
+       font-style: italic;
+       font-weight: bold;
+       cursor: pointer;
+       color: #02c492;
+   }
+
+   #zh {
+       position: absolute;
+       margin-top: 15px;
+       width: 250px;
+   }
+
+   #zh>a {
+       position: absolute;
+       right: 0px;
+   }
+
+   #button {
+       position: absolute;
+       width: 200px;
+       margin-top: 15px;
+       top: 70%;
+       left: 10%;
+   }
+
+   .bt {
+       width: 200px;
+       height: 40px;
+       border-radius: 10px;
+       border: none;
+       background-color: #02c492;
+       color: white;
+       font-weight: bold;
+   }
+
+   #error {
+       width: 150px;
+       height: 25px;
+       background-color: #02c492;
+       position: absolute;
+       top: -17px;
+       left: 40%;
+       text-align: center;
+       line-height: 25px;
+       font-size: 12px;
+       color: white;
+       border-radius: 10px;
+       display: none;
+   }
+
+   .sanjiao {
+       position: absolute;
+       width: 32px;
+       height: 32px;
+       bottom: -17px;
+       left: 50px;
+       display: none;
+   }
+
+   .jinggao {
+       position: absolute;
+       width: 16px;
+       height: 16px;
+       left: 2%;
+       top: 4px;
+   }
+
+   .cuowu {
+       position: absolute;
+       right: 3%;
+       top: 4px;
+   }

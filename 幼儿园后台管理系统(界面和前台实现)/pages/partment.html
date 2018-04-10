@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幼儿园</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link href="../css/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/csshake.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+    <header>
+        <!-- 头部导航 -->
+        <nav class="navbar navbar-default top-navbar">
+            <div class="navbar-header">
+                <!-- 网站logo -->
+                <a class="navbar-brand" href="main.html">
+
+                </a>
+                <!-- 隐藏菜单 -->
+                <div id="sideNav">
+                    <i class="material-icons">toc</i>
+                </div>
+            </div>
+            <!-- 退出 -->
+            <div class="login navbar-right">
+                <div class='clock'>
+                    <div class='h shake shake-slow'></div>
+                    <div class='m shake shake-slow'></div>
+                    <div class='s shake shake-slow'></div>
+                </div>
+                <div class="head-portrait">
+                    <img class="img img-circle" src="../images/grzx/tx.jpg" alt="">
+                    <strong>管理员</strong>
+                </div>
+                <a class="exit" href="javascript:void(0);">
+                    <i class="fa fa-power-off"></i> 退出</a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a class="menu-control" href="main.html">
+                            <i class="fa fa-home"></i> 首页
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a class="active-menu menu-control" href="javascript:void(0);">
+                            <i class="fa fa-sitemap"></i> 基础管理
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="active par">部门管理</li>
+                            <li class="par">职工管理</li>
+                            <li class="par">班级管理</li>
+                            <li class="par">学生管理</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="power.html">
+                            <i class="fa fa-key"></i> 权限管理
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="picture.html">
+                            <i class="fa fa-picture-o"></i> 照片墙
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="check.html">
+                            <i class="fa fa-calendar-check-o"></i> 出勤考核
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="notice.html">
+                            <i class="fa fa-bullhorn"></i>公告通知
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>发布公告</li>
+                            <li>查看公告</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="person.html">
+                            <i class="fa fa-user-circle"></i> 个人中心
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>我的档案</li>
+                            <li>请假申请</li>
+                            <li>离职申请</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- 功能区 -->
+    <section id="func">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="btn_right">
+                        <div class="btn pull-right">
+                            <a class="btn  btn-success departmentBtn" data-toggle="modal" data-target="#department" href="javascript:void(0);">
+                                <i class="fa fa-plus-square "></i> 添加部门</a>
+                            <a class="btn  btn-danger positionDetel deparDelete" href="javascript:void(0);">
+                                <i class="fa fa-remove"></i> 删除部门</a>
+                        </div>
+                        <form action="//" class=" pull-right">
+                            <div class="form-group pad-zero">
+                                <input class="form-control inputDepart" type="text">
+                                <i class="fa fa-search searhDepart"></i>
+                            </div>
+                        </form>
+                    </div>
+                    <divc class="btn_right hidden">
+                        <div class="btn pull-right">
+                            <a class="btn  btn-success save-new" data-toggle="modal" data-target="#position" href="javascript:void(0);">
+                                <i class="fa fa-plus-square "></i> 添加职位</a>
+                            <a class="btn btn-danger positionDetel" href="javascript:void(0);">
+                                <i class="fa fa-remove"></i> 删除职位</a>
+                        </div>
+                        <form action="//" class=" pull-right">
+                            <div class="form-group pad-zero">
+                                <input class="form-control inputDepart" type="text">
+                                <i class="fa fa-search searhPosition searhDepart"></i>
+                            </div>
+                        </form>
+                    </divc>
+                </div>
+            </div>
+        </div>
+        <div class="main main-1">
+            <table class="Department_table table table-bordered table-hover text-center">
+                <!-- <tr>
+                    <td colspan="9">新增部门信息</td>
+                </tr> -->
+                <tr>
+                    <td class="firtd">
+                        <input id="qxBtn" type="checkbox" />
+                    </td>
+                    <td>部门编码</td>
+                    <td>部门名称</td>
+                    <td>部门负责人</td>
+                    <td>部门电话</td>
+                    <td>部门传真</td>
+                    <td>部门类型</td>
+                    <td>操作</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="smallCk" type="checkbox" />
+                    </td>
+                    <td>bm1</td>
+                    <td>人事部</td>
+                    <td>张星星</td>
+                    <td>15775905560</td>
+                    <td></td>
+                    <td>人事中心</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#editDepartment" class="btn btn-success editDepar"><i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                    </button>
+                        <button type="button" class="btn btn-danger">
+                        <i class="fa fa-remove "></i> 删除
+                    </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="smallCk" type="checkbox" />
+                    </td>
+                    <td>bm1</td>
+                    <td>财务部</td>
+                    <td>张星星</td>
+                    <td>15775905560</td>
+                    <td></td>
+                    <td>人事中心</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#editDepartment" class="btn btn-success editDepar">
+                        <i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                    </button>
+                        <button type="button" class="btn btn-danger">
+                        <i class="fa fa-remove "></i> 删除
+                    </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="smallCk" type="checkbox" />
+                    </td>
+                    <td>bm1</td>
+                    <td>教师部</td>
+                    <td>刘霞西</td>
+                    <td>15775905560</td>
+                    <td></td>
+                    <td>人事中心</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#editDepartment" class="btn btn-success editDepar">
+                        <i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                    </button>
+                        <button type="button" class="btn btn-danger">
+                        <i class="fa fa-remove "></i> 删除
+                    </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="smallCk" type="checkbox" />
+                    </td>
+                    <td>Bm11</td>
+                    <td>后勤部</td>
+                    <td>邓超</td>
+                    <td>15354632491</td>
+                    <td></td>
+                    <td>财务中心</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#editDepartment" class="btn btn-success editDepar"><i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                    </button>
+                        <button type="button" class="btn btn-danger"><i
+                            class="fa fa-remove"></i> 删除
+                    </button>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="main main-2 hidden">
+            <table class=" table table-bordered table-hover text-center">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td class="positionname">职位名称</td>
+                    <td>职位描述</td>
+                    <td>操作</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>总经理</td>
+                    <td>公司负责人</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#position-change" class="btn btn-success edit-btn"><i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                        </button>
+                        <button onclick="postionDetele(this)" type="button" class="btn btn-danger"><i
+                                class="fa fa-remove"></i> 删除
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>部门经理</td>
+                    <td>各部门负责人</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#position-change" class="btn btn-success edit-btn"><i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                        </button>
+                        <button onclick="postionDetele(this)" type="button" class="btn btn-danger"><i
+                                class="fa fa-remove"></i> 删除
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>园长</td>
+                    <td>园所负责人</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#position-change" class="btn btn-success edit-btn"><i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                        </button>
+                        <button onclick="postionDetele(this)" type="button" class="btn btn-danger"><i
+                                class="fa fa-remove"></i> 删除
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>系统管理员</td>
+                    <td>系统维护人员</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#position-change" class="btn btn-success edit-btn"><i class="fa fa-pencil-square"></i>&nbsp; 编辑
+                        </button>
+                        <button onclick="postionDetele(this)" type="button" class="btn btn-danger"><i
+                                class="fa fa-remove"></i> 删除
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="container main xwr_ClassApartment hidden">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="btn pull-right ">
+                        <button class="btn btn-success class_add" data-toggle="modal" href="#class_Modal">
+                        <i class="fa fa-plus-square myClass_add"></i> 添加班级</button>
+                        <button class="btn btn-danger class_remove" href="javascript:void(0);">
+                        <i class="fa fa-remove"></i> 批量删除</button>
+                    </div>
+                    <form action="//" class=" pull-right form-inline class_search">
+                        <div class="form-group">
+                            <input class="form-control" type="text">
+                            <i class="fa fa-search info_search"></i>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table .table-condensed text-center  xwr_table class_table">
+                        <tr>
+                            <th>
+                                <input type="checkbox" class="_mychecked">
+                            </th>
+                            <th>班级</th>
+                            <th>班主任</th>
+                            <th>班长</th>
+                            <th>学生人数</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安一班</td>
+                            <td>张二</td>
+                            <td>李欣儿</td>
+                            <td>30</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安二班</td>
+                            <td>李四</td>
+                            <td>王馨儿</td>
+                            <td>25</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安三班</td>
+                            <td>王三</td>
+                            <td>张信儿</td>
+                            <td>26</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安四班</td>
+                            <td>付其</td>
+                            <td>余星儿</td>
+                            <td>28</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安六班</td>
+                            <td>文星</td>
+                            <td>于雅雯</td>
+                            <td>20</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安八班</td>
+                            <td>Oprosix</td>
+                            <td>曹卓儿</td>
+                            <td>25</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安九班</td>
+                            <td>Ares</td>
+                            <td>Qeosx</td>
+                            <td>28</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安十班</td>
+                            <td>Todf</td>
+                            <td>Kunga</td>
+                            <td>14</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>贝贝安十二班</td>
+                            <td>Ritasom</td>
+                            <td>Linda</td>
+                            <td>12</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container main xwr_StudentApartment hidden">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="btn pull-right">
+                        <button class="btn btn-success class_add" data-toggle="modal" href="#student_Modal">
+                        <i class="fa fa-plus-square Add_students"></i> 添加学生</button>
+                        <button class="btn btn-danger class_remove" href="javascript:void(0);">
+                        <i class="fa fa-remove"></i> 批量删除</button>
+                    </div>
+                    <form action="//" class=" pull-right class_search">
+                        <div class="form-group">
+                            <input class="form-control" type="text">
+                            <i class="fa fa-search info_search"></i>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table .table-condensed text-center xwr_table students_table">
+                        <tr>
+                            <th>
+                                <input type="checkbox" class="_mychecked">
+                            </th>
+                            <th>姓名</th>
+                            <th>
+                                <form role="form" class="students_forme">
+                                    <div class="form-group">
+                                        <select class="form-control students_forme students_forme_select">
+                                        <option>性别</option>
+                                        <option>男</option>
+                                        <option>女</option>
+                                    </select>
+                                    </div>
+                                </form>
+                            </th>
+                            <th>出生日期</th>
+                            <th>
+                                <form role="form" class="students_forme">
+                                    <div class="form-group">
+                                        <select class="form-control students_forme students_forme_select">
+                                        <option>年级</option>
+                                        <option>小班</option>
+                                        <option>中班</option>
+                                        <option>大班</option>
+                                    </select>
+                                    </div>
+                                </form>
+                            </th>
+                            <th>
+                                <form role="form" class="students_forme">
+                                    <div class="form-group">
+                                        <select class="form-control students_forme students_forme_select">
+                                        <option>班级</option>
+                                        <option>星星班</option>
+                                        <option>月亮班</option>
+                                        <option>火星班</option>
+                                    </select>
+                                    </div>
+                                </form>
+                            </th>
+                            <th>家长姓名</th>
+                            <th>家长电话</th>
+                            <th>
+                                <form role="form" class="students_forme">
+                                    <div class="form-group">
+                                        <select class="form-control students_forme students_forme_select">
+                                        <option>状态</option>
+                                        <option>在园</option>
+                                        <option>休学</option>
+                                        <option>请假</option>
+                                    </select>
+                                    </div>
+                                </form>
+                            </th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>张章</td>
+                            <td>男</td>
+                            <td>2014-01-16</td>
+                            <td>小班</td>
+                            <td>星星班</td>
+                            <td>Lkijxhn</td>
+                            <td>1525627843</td>
+                            <td>在园</td>
+                            <td>
+                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                            </td>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>夏坤</td>
+                                <td>女</td>
+                                <td>2014-02-11</td>
+                                <td>大班</td>
+                                <td>月亮班</td>
+                                <td>Roindm</td>
+                                <td>15235489856</td>
+                                <td>休园</td>
+                                <td>
+                                    <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                    <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                </td>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>魏超</td>
+                                    <td>女</td>
+                                    <td>2014-05-21</td>
+                                    <td>中班</td>
+                                    <td>星星班</td>
+                                    <td>Wendinsl</td>
+                                    <td>15356249653</td>
+                                    <td>在园</td>
+                                    <td>
+                                        <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                        <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                    </td>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>张浩翔</td>
+                                        <td>男</td>
+                                        <td>2014-06-12</td>
+                                        <td>小班</td>
+                                        <td>月亮班</td>
+                                        <td>Roinsal</td>
+                                        <td>15568944412</td>
+                                        <td>休园</td>
+                                        <td>
+                                            <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                            <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                        </td>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox">
+                                            </td>
+                                            <td>冯秀</td>
+                                            <td>女</td>
+                                            <td>2014-09-10</td>
+                                            <td>大班</td>
+                                            <td>星星班</td>
+                                            <td>Polijhhs</td>
+                                            <td>15256789213</td>
+                                            <td>在园</td>
+                                            <td>
+                                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                            </td>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td>粟阳</td>
+                                                <td>男</td>
+                                                <td>2014-05-09</td>
+                                                <td>中班</td>
+                                                <td>月亮班</td>
+                                                <td>Yoinasjc</td>
+                                                <td>15246861964</td>
+                                                <td>请假</td>
+                                                <td>
+                                                    <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                                    <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                                </td>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox">
+                                                    </td>
+                                                    <td>张章</td>
+                                                    <td>男</td>
+                                                    <td>2014-01-16</td>
+                                                    <td>大班</td>
+                                                    <td>星星班</td>
+                                                    <td>Monjtsaz</td>
+                                                    <td>15286592348</td>
+                                                    <td>在园</td>
+                                                    <td>
+                                                        <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                                        <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                                    </td>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox">
+                                                        </td>
+                                                        <td>彭红</td>
+                                                        <td>女</td>
+                                                        <td>2015-04-22</td>
+                                                        <td>中班</td>
+                                                        <td>月亮班</td>
+                                                        <td>Qiuynbxzl</td>
+                                                        <td>15289624588</td>
+                                                        <td>在园</td>
+                                                        <td>
+                                                            <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                                            <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                                        </td>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox">
+                                                            </td>
+                                                            <td>谢文锐</td>
+                                                            <td>男</td>
+                                                            <td>2014-03-22</td>
+                                                            <td>大班</td>
+                                                            <td>星星班</td>
+                                                            <td>Ylojhmx</td>
+                                                            <td>15276321584</td>
+                                                            <td>在园</td>
+                                                            <td>
+                                                                <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                                                <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                                            </td>
+                                                            <tr>
+                                                                <td>
+                                                                    <input type="checkbox">
+                                                                </td>
+                                                                <td>熊飞跃</td>
+                                                                <td>女</td>
+                                                                <td>2015-06-30</td>
+                                                                <td>小班</td>
+                                                                <td>月亮班</td>
+                                                                <td>Yolkhsx</td>
+                                                                <td>15245152631</td>
+                                                                <td>请假</td>
+                                                                <td>
+                                                                    <button class="btn btn-success fa fa-pencil-square"> 编辑</button>
+                                                                    <button class="btn btn-danger fa fa-remove"> 删除</button>
+                                                                </td>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <!-- 部门增加-->
+    <div class="modal fade" id="department" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title" id="myModalLabeav">新增部门信息</h5>
+                </div>
+                <div class="modal-body ofl ">
+                    <div class="form-group ">
+                        <label for="inputEmailpp" class="col-sm-3 control-label ">部门编码：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d1" id="inputEmailpp" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmaila" class="col-sm-3 control-label ">部门名称：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d2" id="inputEmaila" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmailb" class="col-sm-3 control-label ">部门负责人：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d3" id="inputEmailb" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmailc" class="col-sm-3 control-label ">部门电话：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d4" id="inputEmailc" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmaild" class="col-sm-3 control-label ">部门传真：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d5" id="inputEmaild" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmaile" class="col-sm-3 control-label ">部门类型：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d6" id="inputEmaile" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success dapartmentSavBtn">保存</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 部门更改-->
+    <div class="modal fade" id="editDepartment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title" id="myModalLabem">新增部门信息</h5>
+                </div>
+                <div class="modal-body ofl">
+                    <div class="form-group">
+                        <label for="inputEmailn" class="col-sm-3 control-label ">部门编码：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d1" id="inputEmailn" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmailv" class="col-sm-3 control-label ">部门名称：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d2" id="inputEmailv" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmailp" class="col-sm-3 control-label ">部门负责人：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d3" id="inputEmailp" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmailu" class="col-sm-3 control-label ">部门电话：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d4" id="inputEmailu" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmaily" class="col-sm-3 control-label ">部门传真：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d5" id="inputEmaily" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmailt" class="col-sm-3 control-label ">部门类型：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control d6" id="inputEmailt" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success dapartmentEdit">保存</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--职位添加-->
+    <div class="modal fade" id="position" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title" id="myModalLabel">新增职位信息</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label ">职位名称：</label>
+
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control position-name" id="inputEmail3" placeholder="部门经理">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail4" class="col-sm-3 control-label">职位描述：</label>
+
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control postion-describ" id="inputEmail4" placeholder="各部门负责人">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success save-new">保存</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 职位更改-->
+    <div class="modal fade" id="position-change" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title" id="myModalLabel-1">新增职位信息</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3-3" class="col-sm-3 control-label ">职位名称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control position-name" id="inputEmail3-3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail4-4" class="col-sm-3 control-label">职位描述：</label>
+
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control postion-describ" id="inputEmail4-4">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success save-change">保存</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加班级modal-->
+    <div class="Class_modal modal fade" id="class_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal_header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                    <h5 class="modal-title" id="myModalLabel">
+                        添加班级
+                    </h5>
+                </div>
+                <div class="modal-body text-right">
+                    <form class="form-group add_class_info">
+                        <div class="row">
+                            <div class="form-group class_add">
+                                <div class="control-label col-lg-2 col-sm-2  col-lg-push-1 col-sm-push-1 ">
+                                    <label for="class">班级</label>
+                                </div>
+                                <div class="col-lg-7  col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input onchange="add_class_func(this)" type="text" class="form-control" id="class" placeholder="请输入新建班级名称">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group class_add">
+                                <div class="control-label col-lg-2 col-sm-2  col-lg-push-1 col-sm-push-1 ">
+                                    <label for="Class_Adviser">班主任</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input onchange="add_name_func(this)" type="email" class="form-control" id="Class_Adviser" placeholder="请输入班主任姓名">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group class_add">
+                                <div class="control-label col-lg-2 col-sm-2  col-lg-push-1 col-sm-push-1">
+                                    <label for="monitor">班长</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input onchange="add_name_func(this)" type="email" class="form-control" id="monitor" placeholder="请输入班长姓名">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group class_add">
+                                <div class="control-label col-lg-2 col-sm-2  col-lg-push-1 col-sm-push-1">
+                                    <label for="studentNum">学生人数</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input onchange="add_person_func(this)" type="email" class="form-control" id="studentNum" placeholder="请输入学生人数">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success class_AddClass">添加</button>
+                    <button type="button" class="btn btn-danger cancel_btn" data-dismiss="modal">取消
+                </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改班级信息modal-->
+    <div class="Class_modal modal fade" id="amend_class_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel_amend" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal_header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                    <h5 class="modal-title" id="myModalLabel_amend">
+                        修改班级信息
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group add_class_info">
+                        <div class="row">
+                            <div class="form-group class_add_amend">
+                                <div class="control-label col-lg-2 col-sm-2 col-lg-push-1 col-sm-push-1">
+                                    <label for="class_amend">班级</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input type="text" class="form-control" id="class_amend">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group class_add_amend">
+                                <div class="control-label col-lg-2 col-sm-2 col-lg-push-1 col-sm-push-1">
+                                    <label for="Class_Adviser_amend">班主任</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input type="email" class="form-control" id="Class_Adviser_amend">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group class_add_amend">
+                                <div class="control-label col-lg-2 col-sm-2 col-lg-push-1 col-sm-push-1">
+                                    <label for="monitor_amend">班长</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input type="email" class="form-control" id="monitor_amend">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group class_add_amend">
+                                <div class="control-label col-lg-2 col-sm-2 col-lg-push-1 col-sm-push-1">
+                                    <label for="studentNum_amend">学生人数</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-lg-push-1 col-sm-push-1">
+                                    <input type="email" class="form-control" id="studentNum_amend">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success class_AddClass_amend">修改</button>
+                    <button type="button" class="btn btn-danger cancel_btn" data-dismiss="modal">取消
+                </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--学生添加管理modal-->
+    <div class="Class_modal modal fade" id="student_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal_header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                    <h5 class="modal-title" id="xwr_myModalLabel">
+                        添加学生信息
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group add_class_info">
+                        <div class="row">
+                            <div class="form-group text-right student_add">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="class">姓名</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input onchange="add_name_func(this)" type="text" class="form-control" id="add_name" placeholder="请输入学生姓名">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_add text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="Class_Adviser">性别</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input onchange="add_sec_func(this)" type="email" class="form-control" id="add_sex" placeholder="请输入学生性别">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_add text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="monitor">出生日期</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input onchange="add_data_func(this)" type="email" class="form-control" id="add_date" placeholder="请输入学生出生日期例:1996-03-22">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_add text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="studentNum">年级</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input onchange="add_grade_func(this)" type="email" class="form-control" id="add_grade" placeholder="请输入学生年级">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_add text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="monitor">班级</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input onchange="add_class_func(this)" type="email" class="form-control" id="add_class" placeholder="请输入学生班级">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group student_add text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="studentNum">家长姓名</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input onchange="add_name_func(this)" type="email" class="form-control" id="add_partents" placeholder="请输入家长姓名">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_add text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="monitor">联系方式</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input onchange="add_phone_func(this)" type="email" class="form-control" id="add_contact" placeholder="请输入联系方式">
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_add text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="studentNum1">状态</label>
+                                </div>
+                                <div class="form-group col-lg-push-1 col-sm-push-1   col-lg-7 col-sm-7">
+                                    <select class="form-control control-label " id="studentNum1">
+                                    <option>在园</option>
+                                    <option>休学</option>
+                                    <option>请假</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success students_AddStudents">添加</button>
+                    <button type="button" class="btn btn-danger cancel_btn" data-dismiss="modal">取消
+                </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--修改学生信息-->
+    <div class="Class_modal modal fade" id="amend_student_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal_header modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                    <h5 class="modal-title" id="amend_myModalLabel">
+                        修改学生信息
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group add_class_info">
+                        <div class="row">
+                            <div class="form-group text-right student_amend">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_name">姓名</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input type="text" class="form-control" id="amend_name" placeholder="请输入学生姓名">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_amend text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_sex">性别</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input type="email" class="form-control" id="amend_sex" placeholder="请输入学生性别">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_amend text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_date">出生日期</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-lg-7 col-sm-7">
+                                    <input type="email" class="form-control" id="amend_date" placeholder="请输入学生出生日期">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_amend text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_grade">年级</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input type="email" class="form-control" id="amend_grade" placeholder="请输入学生年级">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_amend text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_class">班级</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input type="email" class="form-control" id="amend_class" placeholder="请输入学生班级">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_amend text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_partents">家长姓名</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input type="email" class="form-control" id="amend_partents" placeholder="请输入家长姓名">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_amend text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_contact">联系方式</label>
+                                </div>
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <input type="email" class="form-control" id="amend_contact" placeholder="请输入联系方式">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group student_amend text-right">
+                                <div class="control-label col-lg-push-1 col-sm-push-1 col-lg-2 col-sm-2">
+                                    <label for="amend_studentNum1">状态</label>
+                                </div>
+                                <div class="form-group col-lg-push-1 col-sm-push-1 col-lg-7 col-sm-7">
+                                    <select class="form-control control-label " id="amend_studentNum1">
+                                    <option>在园</option>
+                                    <option>休学</option>
+                                    <option>请假</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success students_AddStudents">修改</button>
+                    <button type="button" class="btn btn-danger cancel_btn" data-dismiss="modal">取消
+                </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-2.1.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../js/part.js"></script>
+    <script>
+        $(function() {
+            var flag = true;
+            $('.par').eq(0).click(function() {
+                $('.main').addClass('hidden');
+                $('.btn_right').addClass('hidden');
+                $('.main').eq(0).removeClass('hidden');
+                $('.btn_right').eq(0).removeClass('hidden');
+            })
+            $('.par').eq(1).click(function() {
+                $('.main').addClass('hidden');
+                $('.btn_right').addClass('hidden');
+                $('.main').eq(1).removeClass('hidden');
+                $('.btn_right').eq(1).removeClass('hidden');
+            })
+            $('.par').eq(2).click(function() {
+                $('.main').addClass('hidden');
+                $('.btn_right').addClass('hidden');
+                $('.main').eq(2).removeClass('hidden');
+            });
+            $('.par').eq(3).click(function() {
+                $('.main').addClass('hidden');
+                $('.btn_right').addClass('hidden');
+                $('.main').eq(3).removeClass('hidden');
+            });
+        })
+    </script>
+</body>
+
+</html>

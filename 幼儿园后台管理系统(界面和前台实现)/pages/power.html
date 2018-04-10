@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幼儿园</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link href="../css/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/csshake.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+    <header>
+        <!-- 头部导航 -->
+        <nav class="navbar navbar-default top-navbar">
+            <div class="navbar-header">
+                <!-- 网站logo -->
+                <a class="navbar-brand" href="main.html">
+
+                </a>
+                <!-- 隐藏菜单 -->
+                <div id="sideNav">
+                    <i class="material-icons">toc</i>
+                </div>
+            </div>
+            <!-- 退出 -->
+            <div class="login navbar-right">
+                <div class='clock'>
+                    <div class='h shake shake-slow'></div>
+                    <div class='m shake shake-slow'></div>
+                    <div class='s shake shake-slow'></div>
+                </div>
+                <div class="head-portrait">
+                    <img class="img img-circle" src="../images/grzx/tx.jpg" alt="">
+                    <strong>管理员</strong>
+                </div>
+                <a class="exit" href="javascript:void(0);">
+                    <i class="fa fa-power-off"></i> 退出</a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a class="menu-control" href="main.html">
+                            <i class="fa fa-home"></i> 首页
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="partment.html">
+                            <i class="fa fa-sitemap"></i> 基础管理
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>部门管理</li>
+                            <li>职工管理</li>
+                            <li>班级管理</li>
+                            <li>学生管理</li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a class="menu-control active-menu" href="javasrcipt:void(0);">
+                            <i class="fa fa-key"></i> 权限管理
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="picture.html">
+                            <i class="fa fa-picture-o"></i> 照片墙
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control " href="./check.html">
+                            <i class="fa fa-calendar-check-o"></i> 出勤考核
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="notice.html">
+                            <i class="fa fa-bullhorn"></i>公告通知
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>发布公告</li>
+                            <li>查看公告</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="person.html">
+                            <i class="fa fa-user-circle"></i> 个人中心
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>我的档案</li>
+                            <li>请假申请</li>
+                            <li>离职申请</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- 功能区 -->
+    <section id="func">
+        <div id="ck_chuqin"></div>
+        <div id="ck_keys" class="container-fluid">
+            <div class="ck_kuang">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 ck_top_t">
+                        <p>权限管理</p>
+                    </div>
+                    <div class="ck_conter">
+                        <div class="col-lg-2 col-md-3 col-sm-4" style="padding:0">
+                            <select class="form-control ck_downsec">
+                                <option value="所有管理员">所有管理员</option>
+                                <option value="园长">园长</option>
+                                <option value="老师">老师</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-5 ck_conter_sou">
+                            <input type="text" class="form-control ck_input_top" id="ck_sstext">
+                            <button class="btn btn-success fa fa-search ck_btn_top btn-query" type="button" id="ck_search"></button>
+                        </div>
+                        <div class="col-lg-3 col-md-5 col-sm-3 ck_top_t_pen pull-right text-right" style="padding:0">
+                            <button type="button" class="btn btn-success btn-query" data-toggle="modal" data-target="#myModaladd">
+                                <i class="fa fa-plus-square"></i> 新增
+                            </button>
+                            <button type="button" id="ck_delete" class="btn btn-danger btn-query">
+                                <i class="fa fa-remove"></i> 删除
+                            </button>
+                        </div>
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover text-center" id="ck_tb">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="ck_checkall">
+                                        </th>
+                                        <th>学生姓名</th>
+                                        <th>班级</th>
+                                        <th>请假日期</th>
+                                        <th>天数</th>
+                                        <th>请假事由</th>
+                                        <th>备注</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="ck_tbody">
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="ck_tbody_item">
+                                        </td>
+                                        <td>张三</td>
+                                        <td>小班</td>
+                                        <td>2017.9.1</td>
+                                        <td>1天</td>
+                                        <td>生病</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="ck_table_pencil">
+                                                <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModaledit">
+                                                    <i class="fa fa-pencil-square"></i> 编辑
+                                                </button>
+                                                <button href="#" class="btn btn-danger">
+                                                    <i class="fa fa-remove"></i> 删除
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="ck_tbody_item">
+                                        </td>
+                                        <td>李四</td>
+                                        <td>中班</td>
+                                        <td>2015.9.1</td>
+                                        <td>2天</td>
+                                        <td>感冒</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="ck_table_pencil">
+                                                <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModaledit">
+                                                    <i class="fa fa-pencil-square"></i> 编辑
+                                                </button>
+                                                <button href="#" class="btn btn-danger">
+                                                    <i class="fa fa-remove"></i> 删除
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="ck_tbody_item">
+                                        </td>
+                                        <td>王五</td>
+                                        <td>大班</td>
+                                        <td>2016.3.1</td>
+                                        <td>3天</td>
+                                        <td>有事</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="ck_table_pencil">
+                                                <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModaledit">
+                                                    <i class="fa fa-pencil-square"></i> 编辑
+                                                </button>
+                                                <button href="#" class="btn btn-danger">
+                                                    <i class="fa fa-remove"></i> 删除
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="ck_tbody_item">
+                                        </td>
+                                        <td>赵六</td>
+                                        <td>小班</td>
+                                        <td>2017.10.5</td>
+                                        <td>1天</td>
+                                        <td>住院</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="ck_table_pencil">
+                                                <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModaledit">
+                                                    <i class="fa fa-pencil-square"></i> 编辑
+                                                </button>
+                                                <button href="#" class="btn btn-danger">
+                                                    <i class="fa fa-remove"></i> 删除
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="ck_tbody_item">
+                                        </td>
+                                        <td>苟坤</td>
+                                        <td>大班</td>
+                                        <td>2017.4.1</td>
+                                        <td>5天</td>
+                                        <td>住院</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="ck_table_pencil">
+                                                <button href="#" class="btn btn-success" data-toggle="modal" data-target="#myModaledit">
+                                                    <i class="fa fa-pencil-square"></i> 编辑
+                                                </button>
+                                                <button href="#" class="btn btn-danger">
+                                                    <i class="fa fa-remove"></i> 删除
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 新增 -->
+    <div class="modal fade" id="myModaladd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">新增</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="ck_inputxm" class="col-sm-3 control-label">姓名</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="ck_inputxm" placeholder="张三">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputbj" class="col-sm-3 control-label">班级</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="ck_inputbj" placeholder="大班">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputrq" class="col-sm-3 control-label">请假日期</label>
+                            <div class="col-sm-7">
+                                <input type="data" class="form-control" id="ck_inputrq" placeholder="year.month.day">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputrq" class="col-sm-3 control-label">天数</label>
+                            <div class="col-sm-7">
+                                <input type="data" class="form-control" id="ck_inputts" placeholder="几天">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputsy" class="col-sm-3 control-label">请假事由</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="ck_inputsy" placeholder="事假">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputbz" class="col-sm-3 control-label">备注</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="ck_inputbz" placeholder="...">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="ck_add">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--编辑-->
+    <div class="modal fade" id="myModaledit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="ck_inputxm" class="col-sm-3 control-label">姓名</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputbj" class="col-sm-3 control-label">班级</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" placeholder="班级">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputrq" class="col-sm-3 control-label">请假日期</label>
+                            <div class="col-sm-7">
+                                <input type="data" class="form-control" placeholder="year.month.day">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputrq" class="col-sm-3 control-label">天数</label>
+                            <div class="col-sm-7">
+                                <input type="data" class="form-control" placeholder="几天">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputsy" class="col-sm-3 control-label">请假事由</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" placeholder="理由">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ck_inputbz" class="col-sm-3 control-label">备注</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" placeholder="备注">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="ck_edit">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <div class="modal fade" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">用户退出</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="name">账号</label>
+                            <div class="col-xs-9">
+                                <input class="form-control" type="text" id="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="password">密码</label>
+                            <div class="col-xs-9">
+                                <input class="form-control" type="text" id="password">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-2.1.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

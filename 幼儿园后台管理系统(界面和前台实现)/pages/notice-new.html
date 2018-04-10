@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幼儿园</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link href="../css/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/csshake.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+    <header>
+        <!-- 头部导航 -->
+        <nav class="navbar navbar-default top-navbar">
+            <div class="navbar-header">
+                <!-- 网站logo -->
+                <a class="navbar-brand" href="main.html">
+        
+                </a>
+                <!-- 隐藏菜单 -->
+                <div id="sideNav">
+                    <i class="material-icons">toc</i>
+                </div>
+            </div>
+            <!-- 退出 -->
+            <div class="login navbar-right">
+                <div class='clock'>
+                    <div class='h shake shake-slow'></div>
+                    <div class='m shake shake-slow'></div>
+                    <div class='s shake shake-slow'></div>
+                </div>
+                <div class="head-portrait">
+                    <img class="img img-circle" src="../images/grzx/tx.jpg" alt="">
+                    <strong>管理员</strong>
+                </div>
+                <a class="exit" href="javascript:void(0);">
+                    <i class="fa fa-power-off"></i> 退出</a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a class="menu-control" href="main.html">
+                            <i class="fa fa-home"></i> 首页
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="partment.html">
+                            <i class="fa fa-sitemap"></i> 基础管理
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>部门管理</li>
+                            <li>职工管理</li>
+                            <li>班级管理</li>
+                            <li>学生管理</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="power.html">
+                            <i class="fa fa-key"></i> 权限管理
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="picture.html">
+                            <i class="fa fa-picture-o"></i> 照片墙
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="check.html">
+                            <i class="fa fa-calendar-check-o"></i> 出勤考核
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a class="active-menu menu-control" href="notice-detail.html">
+                            <i class="fa fa-bullhorn"></i>公告通知
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="active"><a href="notice-new.html">发布公告</a> </li>
+                            <li><a href="notice.html">查看公告</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="person.html">
+                            <i class="fa fa-user-circle"></i> 个人中心
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>我的档案</li>
+                            <li>请假申请</li>
+                            <li>离职申请</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- 功能区 -->
+    <link rel="stylesheet" href="../kindeditor/themes/default/default.css" />
+    <script charset="utf-8" src="../kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="../kindeditor/lang/zh-CN.js"></script>
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                allowFileManager : true
+            });
+        });
+    </script>
+
+    <section id="func">
+        <div class="ne-content">
+            <form class="form-horizontal" role="form">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="form-group">
+                            <label for="new-title" class="col-sm-2 control-label">标题：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control new-input" id="new-title" placeholder="请输入标题">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label">图片：</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="hidden" id="new-fileselect_file">
+                                <input type="button" value="选择文件" id="new-fileselect" class="btn btn-primary">
+                                <span id="new-file-show"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">简介：</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control new-input" rows="3" placeholder="请输入简介"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">内容：</label>
+                            <div class="col-sm-10">
+                                <textarea name="content" style="width:100%;height:400px;visibility:hidden;">KindEditor</textarea>
+                            </div>
+                        </div>
+                         
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">发送</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">通讯录</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">全部班级
+                                    </label>
+                                </div>
+
+                                <a href="#class-1" class="new-class-list collapsed" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    班级一
+                                    <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+                                </a>
+                                <ul id="class-1" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                                    <li class="active">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">全部学生
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">学生一
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <a href="#class-2" class="new-class-list collapsed" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    班级二
+                                    <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+                                </a>
+                                <ul id="class-2" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                                    <li class="active">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">全部学生
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">学生一
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <a href="#class-3" class="new-class-list collapsed" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    班级一
+                                    <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+                                </a>
+                                <ul id="class-3" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                                    <li class="active">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">全部学生
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">学生一
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                                <a href="#class-4" class="new-class-list collapsed" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    班级四
+                                    <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+                                </a>
+                                <ul id="class-4" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                                    <li class="active">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">全部学生
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">学生一
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <footer></footer>
+    <div class="modal fade" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">用户退出</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="name">账号</label>
+                            <div class="col-xs-9">
+                                <input class="form-control" type="text" id="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-2" for="password">密码</label>
+                            <div class="col-xs-9">
+                                <input class="form-control" type="text" id="password">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        //图片选择模拟点击
+        $(function() {
+            $("#new-fileselect").click(function(){
+                $("#new-fileselect_file").click();
+            });
+            $("#new-fileselect_file").change(function(){
+                $("#new-file-show").html($("#new-fileselect_file").val());
+            });
+            $(".new-class-all").click(function(){
+                //alert($(this).val());
+            });
+        });
+    </script>
+</body>
+
+</html>

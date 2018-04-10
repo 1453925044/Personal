@@ -1,0 +1,633 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幼儿园</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link href="../css/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/csshake.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!--person样式-->
+    <link rel="stylesheet" href="../css/person.css">
+    <!--时间样式-->
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css">
+
+</head>
+
+<body>
+    <header>
+        <!-- 头部导航 -->
+        <nav class="navbar navbar-default top-navbar">
+            <div class="navbar-header">
+                <!-- 网站logo -->
+                <a class="navbar-brand" href="main.html">
+
+                </a>
+                <!-- 隐藏菜单 -->
+                <div id="sideNav">
+                    <i class="material-icons">toc</i>
+                </div>
+            </div>
+            <!-- 退出 -->
+            <div class="login navbar-right">
+                <div class='clock'>
+                    <div class='h shake shake-slow'></div>
+                    <div class='m shake shake-slow'></div>
+                    <div class='s shake shake-slow'></div>
+                </div>
+                <div class="head-portrait">
+                    <img class="img img-circle" src="../images/grzx/tx.jpg" alt="">
+                    <strong>管理员</strong>
+                </div>
+                <a class="exit" href="javascript:void(0);">
+                    <i class="fa fa-power-off"></i> 退出</a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a class=" menu-control" href="main.html">
+                            <i class="fa fa-home"></i> 首页
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="partment.html">
+                            <i class="fa fa-sitemap"></i> 基础管理
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li>部门管理</li>
+                            <li>职工管理</li>
+                            <li>班级管理</li>
+                            <li>学生管理</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="power.html">
+                            <i class="fa fa-key"></i> 权限管理
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="picture.html">
+                            <i class="fa fa-picture-o"></i> 照片墙
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="check.html">
+                            <i class="fa fa-calendar-check-o"></i> 出勤考核
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-control" href="notice.html">
+                            <i class="fa fa-bullhorn"></i>公告通知
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="active">发布公告</li>
+                            <li>查看公告</li>
+                        </ul>
+                    </li>
+
+                    <!--我的个人中心-->
+
+                    <li class="active">
+                        <a class="active-menu  menu-control" href="javascript:void(0);">
+                            <i class="fa fa-user-circle"></i> 个人中心
+                            <span class="fa arrow "></span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="active per">我的档案</li>
+                            <li class="per">我的消息</li>
+                            <li class="per">请假申请</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- 功能区 -->
+    <section id="func">
+
+        <div class="tab-conten">
+
+            <!--我的档案-->
+            <div id="myPerson_DA" role="tabpanel" class="tab-pan active">
+                <div class="container-fluid">
+                    <div class="myPerson_DAbox1">
+                        <span>李 冰
+                            <br> 工 号：N0.BBAYEY007</span>
+                        <img src="../images/grzx/tx.jpg" alt="" class="img-circle" id="myTX">
+                    </div>
+                    <div id="myPerson_DAbox2">
+                        <div class="col-lg-12">
+                            <button type="button" id="myPerson_DAbox3" class="btn btn-primary pull-right " data-toggle="modal" data-target="#myModal">
+                                <i class="fa fa-pencil-square"></i> 编辑
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h5 class="modal-title" id="myModalLabel">
+                                                <i class="fa fa-pencil-square"></i> 编辑个人档案</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+                                                <!-- Nav tabs -->
+                                                <ul class="nav nav-tabs" role="tablist">
+                                                    <li role="presentation" class="active">
+                                                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">个人资料</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">头像设置</a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">修改密码</a>
+                                                    </li>
+                                                </ul>
+                                                <!-- Tab panes -->
+                                                <div class="tab-content">
+                                                    <div role="tabpanel" class="tab-pane active" id="home">
+                                                        <form class="form-inline">
+                                                            <div class="form-group">
+                                                                <label for="exampleInputName2">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                                                                <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入名字">
+                                                            </div><br>
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail2">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</label>
+                                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="请输入年龄">
+                                                            </div><br>
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail2">联系电话：</label>
+                                                                <input type="email" class="form-control" id="exampleInputEmail23" placeholder="请输入新的联系电话">
+                                                            </div><br>
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail2">家住地址：</label>
+                                                                <input type="email" class="form-control" id="exampleInputEmail24" placeholder="请输入新的家庭地址">
+                                                            </div><br>
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail2">身份证号：</label>
+                                                                <input type="email" class="form-control" id="exampleInputEmail25" placeholder="请输入新的身份证号">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div role="tabpanel" class="tab-pane" id="profile">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputFile">用户头像：
+                                                                <br>
+                                                            </label>
+                                                            <img src="../images/grzx/tx.jpg" alt="" class="img-circle">
+                                                            <input type="file" id="exampleInputFile">
+                                                            <p class="help-block">请选择一张新的照片进行编辑</p>
+                                                        </div>
+                                                    </div>
+                                                    <div role="tabpanel" class="tab-pane" id="messages">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail2">旧&nbsp;密&nbsp; 码：</label>
+                                                            <input type="password" class="form-control" id="exampleInputEmail26" placeholder="请输入密码">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail2">新的密码：</label>
+                                                            <input type="password" class="form-control" id="exampleInputEmail27" placeholder="请输入新的密码">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail2">确认密码：</label>
+                                                            <input type="email" class="form-control" id="exampleInputEmail28" placeholder="请再次输入新的密码">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success">确认</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</strong>24岁</span>
+                        <span class="col-lg-4">
+                            <strong>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</strong>女</span>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>联系电话：</strong>18899996666</span>
+                        <span class="col-lg-4">
+                            <strong>家住地址：</strong>成都市人民南路99号</span>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>证件类型：</strong>二代身份证</span>
+                        <span class="col-lg-4">
+                            <strong>身份证号：</strong>503000445004332554</span>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：</strong>本科</span>
+                        <span class="col-lg-4">
+                            <strong>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</strong>幼教</span>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>政治面貌：</strong>团员</span>
+                        <span class="col-lg-4">
+                            <strong>毕业院校：</strong>四川师范大学</span>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>在职状态：</strong>在岗</span>
+                        <span class="col-lg-4">
+                            <strong>人员类型：</strong>正式</span>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务：</strong>教师</span>
+                        <span class="col-lg-4">
+                            <strong>部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门：</strong>教师部</span>
+                        <span class="col-lg-3"></span>
+                        <span class="col-lg-4">
+                            <strong>合同期限：</strong>3年</span>
+                        <span class="col-lg-4">
+                            <strong>入职时间：</strong>2014-1-4</span>
+                        <span class="col-lg-3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!--我的消息-->
+            <div id="myPerson_XX" role="tabpanel" class="tab-pan hidden">
+                <div class="my-message">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#my-msg" data-toggle="tab">我的消息</a>
+                        </li>
+                        <li>
+                            <a href="#sent-msg" data-toggle="tab">已发送</a>
+                        </li>
+                        <li>
+                            <a href="#drafts" data-toggle="tab">草稿箱</a>
+                        </li>
+                    </ul>
+                    <!--选项卡1 我的消息-->
+                    <div id="my-message-tab" class="tab-content">
+                        <div class="tab-pane fade in active" id="my-msg">
+                            <button id="msg-delete-many" type="button" class="btn btn-danger btn-sm ">
+                                <i class="fa fa-remove my-msg-alldel"></i> 批量删除
+                            </button>
+
+                            <!--表格内部-->
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th width="4%">
+                                            <input name="all-checkbox" type="checkbox">
+                                        </th>
+                                        <th width="15%">发件人</th>
+                                        <th width="50%">主题</th>
+                                        <th width="15%">时间</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+
+                            <!--分页-->
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--选项卡2 已发送-->
+                        <div class="tab-pane fade" id="sent-msg">
+                            <button id="sent-msg-add" class="btn btn-primary btn-sm">
+                                <i class="fa fa-plus-square"></i> 写消息</button>
+
+                            <button type="button" class="btn btn-danger btn-sm" id="send-delete-many">
+                                <i class="fa fa-remove"></i> 批量删除</button>
+                            <!--表格-->
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th width="4%">
+                                            <input name="all-checkbox" type="checkbox">
+                                        </th>
+                                        <th width="15%">收件人</th>
+                                        <th width="50%">主题</th>
+                                        <th width="15%">时间</th>
+                                        <th width="15%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <!--分页-->
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--选项卡3 草稿箱-->
+                        <div class="tab-pane fade" id="drafts">
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-remove"></i> 批量删除</button>
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th width="4%">
+                                            <input type="checkbox">
+                                        </th>
+                                        <th width="15%">发件人</th>
+                                        <th width="44%">主题</th>
+                                        <th width="15%">时间</th>
+                                        <th width="22%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <!--分页-->
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--请假申请-->
+            <div id="myPerson_QJ" role="tabpanel" class="tab-pan hidden">
+                <div class="col-lg-12">
+                    <p>主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：
+                        <input type="text">
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <p>申请单号：
+                        <input type="text" value="NO.BBA00001" readonly="readonly">
+                    </p>
+                </div>
+                <hr class="col-lg-11">
+                <div class="col-lg-12">
+                    <table class="table table-bordered">
+                        <tr class="tasks_tit_color">
+                            <th> 序号</th>
+                            <th>姓名</th>
+                            <th>部门</th>
+                            <th>职称</th>
+                            <th>假期类型</th>
+                            <th>开始日期</th>
+                            <th>结束日期</th>
+                            <th>请假事由</th>
+                            <th>提交申请</th>
+                        </tr>
+                        <tr id="myPerson_QJ_TD">
+                            <td>1</td>
+                            <td>李冰
+                                <td>
+                                    <select>
+                                        <option value="volvo">行政部</option>
+                                        <option value="saab">财务部</option>
+                                        <option value="opel">教师部</option>
+                                        <option value="audi">保安部</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="volvo">人事专员</option>
+                                        <option value="saab">出纳</option>
+                                        <option value="opel">教师</option>
+                                        <option value="audi">安保人员</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="volvo">事假</option>
+                                        <option value="saab">病假</option>
+                                        <option value="opel">年休</option>
+                                        <option value="audi">产假</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" value="2014/03/15 05:03" id="datetimepicker1" />
+                                </td>
+                                <td>
+                                    <input type="text" value="2014/03/15 05:03" id="datetimepicker2" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="请输入请假事由" />
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" id="update">
+                                        <i class="glyphicon glyphicon-ok-sign"> 提交</i>
+                                    </button>
+
+                                </td>
+                        </tr>
+                        <tr id="myPerson_QJ_TD">
+                            <td>2</td>
+                            <td>李冰
+                                <td>
+                                    <select>
+                                        <option value="volvo">行政部</option>
+                                        <option value="saab">财务部</option>
+                                        <option value="opel">教师部</option>
+                                        <option value="audi">保安部</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="volvo">人事专员</option>
+                                        <option value="saab">出纳</option>
+                                        <option value="opel">教师</option>
+                                        <option value="audi">安保人员</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="volvo">事假</option>
+                                        <option value="saab">病假</option>
+                                        <option value="opel">年休</option>
+                                        <option value="audi">产假</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" value="2014/03/15 05:03" id="datetimepicker1" />
+                                </td>
+                                <td>
+                                    <input type="text" value="2014/03/15 05:03" id="datetimepicker2" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="请输入请假事由" />
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" id="update">
+                                        <i class="glyphicon glyphicon-ok-sign"> 提交</i>
+                                    </button>
+
+                                </td>
+                        </tr>
+                        <tr id="myPerson_QJ_TD">
+                            <td>3</td>
+                            <td>李冰
+                                <td>
+                                    <select>
+                                        <option value="volvo">行政部</option>
+                                        <option value="saab">财务部</option>
+                                        <option value="opel">教师部</option>
+                                        <option value="audi">保安部</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="volvo">人事专员</option>
+                                        <option value="saab">出纳</option>
+                                        <option value="opel">教师</option>
+                                        <option value="audi">安保人员</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="volvo">事假</option>
+                                        <option value="saab">病假</option>
+                                        <option value="opel">年休</option>
+                                        <option value="audi">产假</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" value="2014/03/15 05:03" id="datetimepicker1" />
+                                </td>
+                                <td>
+                                    <input type="text" value="2014/03/15 05:03" id="datetimepicker2" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="请输入请假事由" />
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" id="update">
+                                        <i class="glyphicon glyphicon-ok-sign"> 提交</i>
+                                    </button>
+
+                                </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <div class="modalWrap">
+        <!--  选项卡2中的新增弹出窗的内容  -->
+        <div id="sent-msg-addbox">
+            <form class="form-horizontal">
+                <div class="row write-information-width" style="width: 380px">
+                    <div class="col-md-4">收件人:</div>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" name="s-recipients">
+                    </div>
+                    <div class="col-md-4">主题:</div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="s-theme">
+                    </div>
+                    <div class="col-md-4">内容:</div>
+                    <div class="col-md-8">
+                        <textarea class="form-control" rows="3" name="s-conten"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--  所以查看按钮弹窗的HTML  -->
+        <div id="mymsg-details">
+            <div class="row write-information-width">
+                <div class="col-md-12">收件人：
+                    <span></span>
+                </div>
+                <div class="col-md-12">主题：
+                    <span></span>
+                </div>
+                <div class="col-md-12">内容：
+                    <span></span>
+                </div>
+                <div class="col-md-12">创建时间：
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-2.1.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.datetimepicker.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        $(function() {
+            $('.per').click(function() {
+                $('.tab-pan').addClass('hidden');
+                $('.tab-pan').eq($('.per').index($(this))).removeClass('hidden');
+            })
+            $('#update').click(function() {
+                layer.msg('提交成功', {
+                    time: 1000,
+                    icon: 1
+                });
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>
